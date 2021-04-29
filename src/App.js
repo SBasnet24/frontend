@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy, Suspense } from 'react';
+import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import { ToastContainer } from 'react-toastify';
+import ClientList from './pages/ClientList';
+import UpdateClient from './pages/UpdateClient';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Home = lazy(() => import('./pages/Home'));
+
+
+const App = ()=>{
+  return(
+    <Suspense fallback={<div>Loading...</div>}>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path = "/" component = {Home}  />
+        <Route exact path = "/clients" component = {ClientList}  />
+        <Route exact path = "/client/:id" component = {UpdateClient}  />
+      </Switch>
+    </BrowserRouter>
+    <ToastContainer/>
+    </Suspense>
+  )
 }
 
-export default App;
+export default App

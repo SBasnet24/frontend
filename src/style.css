@@ -1,0 +1,27 @@
+.main__head{
+    background-color: burlywood;
+    color: white;
+    padding: 25px;
+}
+.submit__btn{
+    background-color: #bd0303;
+    color:white
+}
+.submit__btn:hover , .type__btn:hover{
+    background-color:darkblue;
+    color:white
+}
+.type__btn{
+    background-color: yellow;
+}
+.background__last h2{
+    font-size: 70px;
+    
+}
+.main__form{
+    padding-top:20px;
+}
+.background__last{
+    background-color: #f5acc4;
+    padding: 20px;
+}
