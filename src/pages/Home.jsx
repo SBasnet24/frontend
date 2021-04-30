@@ -48,7 +48,8 @@ const Home = ()=>{
         if(_.isEmpty(dob)) {vError=true; toast.error("Date of Birth is required",toastConfig)}
         if(_.isEmpty(education_background)) {vError=true; toast.error("Education Background is required",toastConfig);}
         if(_.isEmpty(preffered_mode)) {vError=true; toast.error("Preffered Mode is required",toastConfig)}
-        if(phone.length <10){
+        
+        if(phone.length >0 && phone.length <10){
             vError=true;
             toast.error("Phone no is invalid",toastConfig)
         }
